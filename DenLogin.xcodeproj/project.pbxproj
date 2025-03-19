@@ -11,6 +11,7 @@
 		202AA2A52D8ABADC00DA4195 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202AA2A42D8ABADC00DA4195 /* ContentView.swift */; };
 		202AA2A72D8ABADF00DA4195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202AA2A62D8ABADF00DA4195 /* Assets.xcassets */; };
 		202AA2AA2D8ABADF00DA4195 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202AA2A92D8ABADF00DA4195 /* Preview Assets.xcassets */; };
+		202AA2B12D8ABAFE00DA4195 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202AA2B02D8ABAFE00DA4195 /* LoginService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		202AA2A42D8ABADC00DA4195 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		202AA2A62D8ABADF00DA4195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		202AA2A92D8ABADF00DA4195 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		202AA2B02D8ABAFE00DA4195 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				202AA2A22D8ABADC00DA4195 /* DenLoginApp.swift */,
 				202AA2A42D8ABADC00DA4195 /* ContentView.swift */,
+				202AA2B02D8ABAFE00DA4195 /* LoginService.swift */,
 				202AA2A62D8ABADF00DA4195 /* Assets.xcassets */,
 				202AA2A82D8ABADF00DA4195 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				202AA2A52D8ABADC00DA4195 /* ContentView.swift in Sources */,
+				202AA2B12D8ABAFE00DA4195 /* LoginService.swift in Sources */,
 				202AA2A32D8ABADC00DA4195 /* DenLoginApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
