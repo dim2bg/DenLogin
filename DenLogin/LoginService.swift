@@ -13,6 +13,8 @@ protocol LoginServiceProtocol {
 
 struct LoginService: LoginServiceProtocol {
     
+    let requestFinalizer: RequestFinalizer
+    
     func getToken() async throws -> String {
         let endpoint = "http://localhost:3000/login"
         let url = URL(string: endpoint)! // Adjust the URL accordingly
@@ -24,7 +26,7 @@ struct LoginService: LoginServiceProtocol {
             "password": "Roby1999"
         ]
         request.httpBody = try JSONSerialization.data(withJSONObject: requestBody, options: [])
-        request.addValue("", forHTTPHeaderField: "Set-Cookie")
+        request = requestFinalizer.finalizedRequest(request: request, userId: "")
         
         let (_, response) = try await URLSession.shared.data(for: request)
 
@@ -40,11 +42,13 @@ struct LoginService: LoginServiceProtocol {
             throw URLError(.badServerResponse)
         }
         
+        TokenRepo.save(token: token)
+        
         return token
     }
     
     private func extractSessionToken(from cookie: String) -> String? {
-        let pattern = #"acc-session=([a-f0-9\-]+)"#
+        let pattern = #"(acc-session=[a-f0-9\-]+)"#
         
         if let regex = try? NSRegularExpression(pattern: pattern, options: []),
            let match = regex.firstMatch(in: cookie, options: [], range: NSRange(location: 0, length: cookie.utf16.count)) {

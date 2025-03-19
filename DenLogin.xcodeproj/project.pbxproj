@@ -12,6 +12,8 @@
 		202AA2A72D8ABADF00DA4195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202AA2A62D8ABADF00DA4195 /* Assets.xcassets */; };
 		202AA2AA2D8ABADF00DA4195 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202AA2A92D8ABADF00DA4195 /* Preview Assets.xcassets */; };
 		202AA2B12D8ABAFE00DA4195 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202AA2B02D8ABAFE00DA4195 /* LoginService.swift */; };
+		202AA2B32D8AE58D00DA4195 /* RequestFinalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202AA2B22D8AE58D00DA4195 /* RequestFinalizer.swift */; };
+		202AA2B52D8AF65700DA4195 /* TokenRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202AA2B42D8AF65700DA4195 /* TokenRepo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		202AA2A62D8ABADF00DA4195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		202AA2A92D8ABADF00DA4195 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		202AA2B02D8ABAFE00DA4195 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		202AA2B22D8AE58D00DA4195 /* RequestFinalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFinalizer.swift; sourceTree = "<group>"; };
+		202AA2B42D8AF65700DA4195 /* TokenRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRepo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +58,10 @@
 			isa = PBXGroup;
 			children = (
 				202AA2A22D8ABADC00DA4195 /* DenLoginApp.swift */,
+				202AA2B42D8AF65700DA4195 /* TokenRepo.swift */,
 				202AA2A42D8ABADC00DA4195 /* ContentView.swift */,
 				202AA2B02D8ABAFE00DA4195 /* LoginService.swift */,
+				202AA2B22D8AE58D00DA4195 /* RequestFinalizer.swift */,
 				202AA2A62D8ABADF00DA4195 /* Assets.xcassets */,
 				202AA2A82D8ABADF00DA4195 /* Preview Content */,
 			);
@@ -142,6 +148,8 @@
 			files = (
 				202AA2A52D8ABADC00DA4195 /* ContentView.swift in Sources */,
 				202AA2B12D8ABAFE00DA4195 /* LoginService.swift in Sources */,
+				202AA2B32D8AE58D00DA4195 /* RequestFinalizer.swift in Sources */,
+				202AA2B52D8AF65700DA4195 /* TokenRepo.swift in Sources */,
 				202AA2A32D8ABADC00DA4195 /* DenLoginApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

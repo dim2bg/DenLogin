@@ -13,6 +13,13 @@ struct ContentView: View {
         VStack {
             Text("Token:")
             Text(viewModel.token)
+            Spacer()
+            Text("Number of user's posts:")
+            Text(viewModel.posts.count)
+            Spacer()
+            Button("Remove all tokens") {
+                TokenRepo.removeAll()
+            }
         }
         .padding()
     }
@@ -24,10 +31,13 @@ struct ContentView: View {
 
 final class LoginVM: ObservableObject {
     @Published var token = ""
-    let service = LoginService()
+    @Published var posts = [Post]()
+    let service = LoginService(requestFinalizer: RequestFinalizer())
+    let postsService = PostsService(requestFinalizer: RequestFinalizer())
     init() {
         Task {
             await provideToken()
+            await providePosts()
         }
     }
     
@@ -41,6 +51,21 @@ final class LoginVM: ObservableObject {
         }
         
     }
+    
+    @MainActor
+    private func providePosts() async {
+        do {
+            posts = try await postsService.getPosts(authorId: "5f19927c25b042b1849b27407ec1641b", using: "")
+        } catch {
+            print("error fetching posts...")
+            print("\(error)")
+        }
+        
+    }
 }
 
-
+extension Text {
+    init(_ value: Int) {
+        self = Text("\(value)")
+    }
+}
