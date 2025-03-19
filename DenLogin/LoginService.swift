@@ -24,6 +24,7 @@ struct LoginService: LoginServiceProtocol {
             "password": "Roby1999"
         ]
         request.httpBody = try JSONSerialization.data(withJSONObject: requestBody, options: [])
+        request.addValue("", forHTTPHeaderField: "Set-Cookie")
         
         let (_, response) = try await URLSession.shared.data(for: request)
 
@@ -35,11 +36,11 @@ struct LoginService: LoginServiceProtocol {
             throw URLError(.badServerResponse)
         }
         
-        guard let sessionId = extractSessionToken(from: cookie) else {
+        guard let token = extractSessionToken(from: cookie) else {
             throw URLError(.badServerResponse)
         }
         
-        return sessionId
+        return token
     }
     
     private func extractSessionToken(from cookie: String) -> String? {
